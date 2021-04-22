@@ -28,8 +28,7 @@ const userRoute= require('./routes/users')
 
 app.use('/users', userRoute)
 
-const mongoose = require('mongoose');
-const app = express(); 
+
 const bodyParser = require('body-parser'); 
 require('dotenv/config');
 
