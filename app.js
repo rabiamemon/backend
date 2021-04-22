@@ -24,9 +24,11 @@ app.use(express.json());
 
 
 //import Routes
-const userRoute= require('./routes/users')                
+const userRoute= require('./routes/users')
+const serviceRoute=require('./routes/services')                
 
 app.use('/users', userRoute)
+app.use('/services',serviceRoute)
 
 
 const bodyParser = require('body-parser'); 
@@ -57,12 +59,12 @@ app.get('/', (req, res) => {
 
 
 
-//Connecting to DB 
-mongoose.connect(
-    process.env.DB_CONNECTION, 
-    { useNewUrlParser: true }, 
-    () => console.log('connected to DB')
-);
+// //Connecting to DB 
+// mongoose.connect(
+//     process.env.DB_CONNECTION, 
+//     { useNewUrlParser: true }, 
+//     () => console.log('connected to DB')
+// );
 
 
 app.listen(3000); 
