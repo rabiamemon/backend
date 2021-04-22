@@ -9,10 +9,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //Import Routes
-const postsRoute = require('./routes/posts')
+const postsRoute = require('./routes/posts');
+const authRoute = require('./routes/auth');
 
 //Middleware
-app.use('/posts', postsRoute)
+app.use('/posts', postsRoute);
+app.use('/users', authRoute);
 
 //ROUTES 
 app.get('/', (req, res) => {
